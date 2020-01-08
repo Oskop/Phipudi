@@ -42,8 +42,8 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <!-- Brand -->
-        <a class="navbar-brand pt-0" href="./index.html">
-            <img src="./assets/img/brand/blue.png" class="navbar-brand-img" alt="...">
+        <a class="navbar-brand pt-0" th:href="@{/dashboard}">
+            <img th:src="@{assets/img/brand/blue.png}" class="navbar-brand-img" alt="...">
         </a>
         <!-- User -->
         <ul class="nav align-items-center d-md-none">
@@ -67,32 +67,32 @@
               </span>
                     </div>
                 </a>
-                <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
-                    <div class=" dropdown-header noti-title">
-                        <h6 class="text-overflow m-0">Welcome!</h6>
-                    </div>
-                    <a href="./examples/profile.html" class="dropdown-item">
-                        <i class="ni ni-single-02"></i>
-                        <span>My profile</span>
-                    </a>
-                    <a href="./examples/profile.html" class="dropdown-item">
-                        <i class="ni ni-settings-gear-65"></i>
-                        <span>Settings</span>
-                    </a>
-                    <a href="./examples/profile.html" class="dropdown-item">
-                        <i class="ni ni-calendar-grid-58"></i>
-                        <span>Activity</span>
-                    </a>
-                    <a href="./examples/profile.html" class="dropdown-item">
-                        <i class="ni ni-support-16"></i>
-                        <span>Support</span>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#!" class="dropdown-item">
-                        <i class="ni ni-user-run"></i>
-                        <span>Logout</span>
-                    </a>
-                </div>
+<!--                <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">-->
+<!--                    <div class=" dropdown-header noti-title">-->
+<!--                        <h6 class="text-overflow m-0">Welcome!</h6>-->
+<!--                    </div>-->
+<!--                    <a href="./examples/profile.html" class="dropdown-item">-->
+<!--                        <i class="ni ni-single-02"></i>-->
+<!--                        <span>My profile</span>-->
+<!--                    </a>-->
+<!--                    <a href="./examples/profile.html" class="dropdown-item">-->
+<!--                        <i class="ni ni-settings-gear-65"></i>-->
+<!--                        <span>Settings</span>-->
+<!--                    </a>-->
+<!--                    <a href="./examples/profile.html" class="dropdown-item">-->
+<!--                        <i class="ni ni-calendar-grid-58"></i>-->
+<!--                        <span>Activity</span>-->
+<!--                    </a>-->
+<!--                    <a href="./examples/profile.html" class="dropdown-item">-->
+<!--                        <i class="ni ni-support-16"></i>-->
+<!--                        <span>Support</span>-->
+<!--                    </a>-->
+<!--                    <div class="dropdown-divider"></div>-->
+<!--                    <a href="#!" class="dropdown-item">-->
+<!--                        <i class="ni ni-user-run"></i>-->
+<!--                        <span>Logout</span>-->
+<!--                    </a>-->
+<!--                </div>-->
             </li>
         </ul>
         <!-- Collapse -->
@@ -101,7 +101,7 @@
             <div class="navbar-collapse-header d-md-none">
                 <div class="row">
                     <div class="col-6 collapse-brand">
-                        <a href="./index.html">
+                        <a th:href="@{/dashboard}">
                             <img src="@{assets/img/brand/blue.png}">
                         </a>
                     </div>
@@ -196,32 +196,32 @@
                             </div>
                         </div>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
-                        <div class=" dropdown-header noti-title">
-                            <h6 class="text-overflow m-0">Welcome!</h6>
-                        </div>
-                        <a href="./examples/profile.html" class="dropdown-item">
-                            <i class="ni ni-single-02"></i>
-                            <span>My profile</span>
-                        </a>
-                        <a href="./examples/profile.html" class="dropdown-item">
-                            <i class="ni ni-settings-gear-65"></i>
-                            <span>Settings</span>
-                        </a>
-                        <a href="./examples/profile.html" class="dropdown-item">
-                            <i class="ni ni-calendar-grid-58"></i>
-                            <span>Activity</span>
-                        </a>
-                        <a href="./examples/profile.html" class="dropdown-item">
-                            <i class="ni ni-support-16"></i>
-                            <span>Support</span>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#!" class="dropdown-item">
-                            <i class="ni ni-user-run"></i>
-                            <span>Logout</span>
-                        </a>
-                    </div>
+<!--                    <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">-->
+<!--                        <div class=" dropdown-header noti-title">-->
+<!--                            <h6 class="text-overflow m-0">Welcome!</h6>-->
+<!--                        </div>-->
+<!--                        <a href="./examples/profile.html" class="dropdown-item">-->
+<!--                            <i class="ni ni-single-02"></i>-->
+<!--                            <span>My profile</span>-->
+<!--                        </a>-->
+<!--                        <a href="./examples/profile.html" class="dropdown-item">-->
+<!--                            <i class="ni ni-settings-gear-65"></i>-->
+<!--                            <span>Settings</span>-->
+<!--                        </a>-->
+<!--                        <a href="./examples/profile.html" class="dropdown-item">-->
+<!--                            <i class="ni ni-calendar-grid-58"></i>-->
+<!--                            <span>Activity</span>-->
+<!--                        </a>-->
+<!--                        <a href="./examples/profile.html" class="dropdown-item">-->
+<!--                            <i class="ni ni-support-16"></i>-->
+<!--                            <span>Support</span>-->
+<!--                        </a>-->
+<!--                        <div class="dropdown-divider"></div>-->
+<!--                        <a href="#!" class="dropdown-item">-->
+<!--                            <i class="ni ni-user-run"></i>-->
+<!--                            <span>Logout</span>-->
+<!--                        </a>-->
+<!--                    </div>-->
                 </li>
             </ul>
         </div>
@@ -262,12 +262,14 @@
                                 <form th:action="@{/tambah-hutang}" th:object="${htn}" method="post">
                                     <h3 for="orang" class="ml-1">Pihak Terkait</h3>
                                     <div class="form-group">
-                                        <input type="text" id="orang" class="form-control form-control-alternative" th:field="*{orang}" name="orang">
+                                        <input type="text" id="orang" class="form-control form-control-alternative"
+                                               th:field="*{orang}" name="orang" required="true" maxlength="30">
                                     </div>
                                     <h3 for="orang_id" class="ml-1">Jumlah</h3>
                                     <div class="form-group">
                                         <input type="text" id="tipe" class="form-control form-control-alternative" th:field="*{tipe}" th:value="hutang">
-                                        <input type="number" class="form-control form-control-alternative border-0 align-items-right" name="jumlah" placeholder="Rupiah" th:field="*{jumlah}">
+                                        <input type="number" class="form-control form-control-alternative border-0 align-items-right"
+                                               name="jumlah" placeholder="Rupiah" th:field="*{jumlah}" required="true">
                                     </div>
                                     <h3 for="orang_id" class="ml-1">Jatuh Tempo</h3>
                                     <div class="form-group">
@@ -275,12 +277,14 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
                                             </div>
-                                            <input class="form-control datepicker" placeholder="Select date" type="text" th:field="*{jatuhtempo}" id="tanggal_tempo">
+                                            <input class="form-control datepicker" placeholder="Select date" type="text"
+                                                   th:field="*{jatuhtempo}" id="tanggal_tempo" required="true">
                                         </div>
                                     </div>
                                     <h3 for="keterangan" class="ml-1">Keterangan</h3>
                                     <div class="form-group">
-                                        <textarea class="form-control form-control-alternative" rows="3" cols="50" th:field="*{keterangan}" name="keterangan"></textarea>
+                                        <textarea class="form-control form-control-alternative" rows="3" cols="50"
+                                                  th:field="*{keterangan}" name="keterangan" required="true"></textarea>
                                     </div>
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary">Simpan</button>

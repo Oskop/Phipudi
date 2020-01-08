@@ -23,6 +23,11 @@ public class AppController {
     @Autowired
     private HutangRepo htgRepo;
 
+//    @RequestMapping("/")
+//    public String indes() {
+//        return "redirect:/dashboard";
+//    }
+
     @RequestMapping("/dashboard")
     public void index(Model model){
         model.addAttribute("hupi", htgRepo.jatuhTempo());
